@@ -1,0 +1,27 @@
+<?xml version="1.0" encoding="utf-8"?>
+<navigation xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    android:id="@+id/movies_nvigation_graph"
+    app:startDestination="@id/popularMoviesFragment">
+
+    <fragment
+        android:id="@+id/popularMoviesFragment"
+        android:name="com.example.emamian_mt.ui.PopularMoviesFragment"
+        android:label="PopularMoviesFragment" >
+        <action
+            android:id="@+id/action_popularMoviesFragment_to_moviesDetailFragment"
+            app:enterAnim="@anim/slide_in_right"
+            app:exitAnim="@anim/slide_out_left"
+            app:popEnterAnim="@anim/slide_in_left"
+            app:popExitAnim="@anim/slide_out_right"
+            app:destination="@id/moviesDetailFragment" />
+    </fragment>
+    <fragment
+        android:id="@+id/moviesDetailFragment"
+        android:name="com.example.emamian_mt.ui.MovieDetailFragment"
+        android:label="MoviesDetailFragment" >
+        <argument
+            android:name="movie"
+            app:argType="com.example.emamian_mt.models.Movie" />
+    </fragment>
+</navigation>
